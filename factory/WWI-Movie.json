@@ -1,0 +1,9 @@
+{
+	"name": "WWI-Movie",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f7daaca1-72d1-43a4-9ddc-00198028c071",
+		"tenantId": "af37d601-d55d-4f9f-af17-901ff37f1509"
+	}
+}
