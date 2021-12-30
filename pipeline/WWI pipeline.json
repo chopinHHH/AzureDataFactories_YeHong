@@ -1,9 +1,9 @@
 {
-	"name": "OLTP To ODS",
+	"name": "WWI pipeline",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy OLTP To ODS",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
