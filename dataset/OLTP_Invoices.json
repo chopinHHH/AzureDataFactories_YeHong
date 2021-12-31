@@ -1,5 +1,5 @@
 {
-	"name": "Invoices",
+	"name": "OLTP_Invoices",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "WWI_Database_OLTP",

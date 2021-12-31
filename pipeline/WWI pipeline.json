@@ -417,7 +417,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Customers",
+						"referenceName": "OLTP_Customers",
 						"type": "DatasetReference"
 					}
 				],
@@ -657,7 +657,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Orders",
+						"referenceName": "OLTP_Orders",
 						"type": "DatasetReference"
 					}
 				],
@@ -857,7 +857,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "OrderLines",
+						"referenceName": "OLTP_OrderLines",
 						"type": "DatasetReference"
 					}
 				],
@@ -1205,7 +1205,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Invoices",
+						"referenceName": "OLTP_Invoices",
 						"type": "DatasetReference"
 					}
 				],
@@ -1569,7 +1569,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "StockItems",
+						"referenceName": "OLTP_StockItems",
 						"type": "DatasetReference"
 					}
 				],
