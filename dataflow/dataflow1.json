@@ -14,10 +14,6 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "Integration_StockItems",
-						"type": "DatasetReference"
-					},
 					"name": "sink1"
 				}
 			],
@@ -26,7 +22,7 @@
 					"name": "addingIsActive"
 				}
 			],
-			"script": "source(output(\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> IntegrationStockItems\nIntegrationStockItems derive(isActive = 1) ~> addingIsActive\naddingIsActive sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tStockItemKey as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp,\n\t\tCurrentFlag as integer\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tStockItemID,\n\t\tStockItemName,\n\t\tSupplierID,\n\t\tColorID,\n\t\tUnitPackageID,\n\t\tOuterPackageID,\n\t\tBrand,\n\t\tSize,\n\t\tLeadTimeDays,\n\t\tQuantityPerOuter,\n\t\tIsChillerStock,\n\t\tBarcode,\n\t\tTaxRate,\n\t\tUnitPrice,\n\t\tRecommendedRetailPrice,\n\t\tTypicalWeightPerUnit,\n\t\tMarketingComments,\n\t\tInternalComments,\n\t\tCustomFields,\n\t\tTags,\n\t\tSearchDetails,\n\t\tLastEditedBy,\n\t\tValidFrom,\n\t\tValidTo\n\t)) ~> sink1"
+			"script": "source(output(\n\t\tID as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> IntegrationStockItems\nIntegrationStockItems derive(isActive = 1) ~> addingIsActive\naddingIsActive sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
