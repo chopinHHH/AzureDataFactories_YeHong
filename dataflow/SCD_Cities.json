@@ -1,0 +1,20 @@
+{
+	"name": "SCD_Cities",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Integration_Cities",
+						"type": "DatasetReference"
+					},
+					"name": "ITGCities"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "source(output(\n\t\tCityKey as integer,\n\t\tCityID as integer,\n\t\tCityName as string,\n\t\tLocation as binary,\n\t\tLatestRecordedPopulation as long,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp,\n\t\tCurrentFlag as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> ITGCities"
+		}
+	}
+}
