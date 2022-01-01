@@ -9,34 +9,40 @@
 						"referenceName": "ODS_StockItems",
 						"type": "DatasetReference"
 					},
-					"name": "IntegrationStockItems"
+					"name": "ITGStockItems"
+				},
+				{
+					"dataset": {
+						"referenceName": "Integration_StockItems",
+						"type": "DatasetReference"
+					},
+					"name": "SinkStockItems"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Integration_StockItems",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
-					"name": "DerivedColumn1"
+					"name": "addingIsActive"
 				},
 				{
-					"name": "DerivedColumn2"
+					"name": "Select1"
 				},
 				{
-					"name": "DerivedColumn3"
+					"name": "Lookup1"
 				},
 				{
-					"name": "DerivedColumn4"
-				},
-				{
-					"name": "DerivedColumn5"
-				},
-				{
-					"name": "DerivedColumn6"
-				},
-				{
-					"name": "DerivedColumn7"
+					"name": "ExistingRows"
 				}
 			],
-			"script": "source(output(\n\t\tID as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> IntegrationStockItems\nDerivedColumn2 derive() ~> DerivedColumn1\nDerivedColumn3 derive() ~> DerivedColumn2\nDerivedColumn4 derive() ~> DerivedColumn3\nDerivedColumn5 derive() ~> DerivedColumn4\nDerivedColumn6 derive() ~> DerivedColumn5\nDerivedColumn7 derive() ~> DerivedColumn6\nIntegrationStockItems derive() ~> DerivedColumn7"
+			"script": "source(output(\n\t\tID as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> ITGStockItems\nsource(output(\n\t\tStockItemKey as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp,\n\t\tCurrentFlag as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> SinkStockItems\nITGStockItems derive(isActive = 1) ~> addingIsActive\nSinkStockItems select(mapColumn(\n\t\tSQL_StockItemKey = StockItemKey,\n\t\tSQL_StockItemID = StockItemID,\n\t\tSQL_StockItemName = StockItemName,\n\t\tSQL_SupplierID = SupplierID,\n\t\tSQL_ColorID = ColorID,\n\t\tSQL_UnitPackageID = UnitPackageID,\n\t\tSQL_OuterPackageID = OuterPackageID,\n\t\tSQL_Brand = Brand,\n\t\tSQL_Size = Size,\n\t\tSQL_LeadTimeDays = LeadTimeDays,\n\t\tSQL_QuantityPerOuter = QuantityPerOuter,\n\t\tSQL_IsChillerStock = IsChillerStock,\n\t\tSQL_Barcode = Barcode,\n\t\tSQL_TaxRate = TaxRate,\n\t\tSQL_UnitPrice = UnitPrice,\n\t\tSQL_RecommendedRetailPrice = RecommendedRetailPrice,\n\t\tSQL_TypicalWeightPerUnit = TypicalWeightPerUnit,\n\t\tSQL_MarketingComments = MarketingComments,\n\t\tSQL_InternalComments = InternalComments,\n\t\tSQL_Photo = Photo,\n\t\tSQL_CustomFields = CustomFields,\n\t\tSQL_Tags = Tags,\n\t\tSQL_SearchDetails = SearchDetails,\n\t\tSQL_LastEditedBy = LastEditedBy,\n\t\tSQL_ValidFrom = ValidFrom,\n\t\tSQL_ValidTo = ValidTo,\n\t\tSQL_CurrentFlag = CurrentFlag\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nITGStockItems, Select1 lookup(StockItemID == SQL_StockItemID,\n\tmultiple: true,\n\tbroadcast: 'auto')~> Lookup1\nLookup1 filter(!isNull(SQL_StockItemID)) ~> ExistingRows\naddingIsActive sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tStockItemKey as integer,\n\t\tStockItemID as integer,\n\t\tStockItemName as string,\n\t\tSupplierID as integer,\n\t\tColorID as integer,\n\t\tUnitPackageID as integer,\n\t\tOuterPackageID as integer,\n\t\tBrand as string,\n\t\tSize as string,\n\t\tLeadTimeDays as integer,\n\t\tQuantityPerOuter as integer,\n\t\tIsChillerStock as boolean,\n\t\tBarcode as string,\n\t\tTaxRate as decimal(18,3),\n\t\tUnitPrice as decimal(18,2),\n\t\tRecommendedRetailPrice as decimal(18,2),\n\t\tTypicalWeightPerUnit as decimal(18,3),\n\t\tMarketingComments as string,\n\t\tInternalComments as string,\n\t\tPhoto as binary,\n\t\tCustomFields as string,\n\t\tTags as string,\n\t\tSearchDetails as string,\n\t\tLastEditedBy as integer,\n\t\tValidFrom as timestamp,\n\t\tValidTo as timestamp,\n\t\tCurrentFlag as integer\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tStockItemKey = ID,\n\t\tStockItemID,\n\t\tStockItemName,\n\t\tSupplierID,\n\t\tColorID,\n\t\tUnitPackageID,\n\t\tOuterPackageID,\n\t\tBrand,\n\t\tSize,\n\t\tLeadTimeDays,\n\t\tQuantityPerOuter,\n\t\tIsChillerStock,\n\t\tBarcode,\n\t\tTaxRate,\n\t\tUnitPrice,\n\t\tRecommendedRetailPrice,\n\t\tTypicalWeightPerUnit,\n\t\tMarketingComments,\n\t\tInternalComments,\n\t\tPhoto,\n\t\tCustomFields,\n\t\tTags,\n\t\tSearchDetails,\n\t\tLastEditedBy,\n\t\tValidFrom,\n\t\tValidTo,\n\t\tCurrentFlag = isActive\n\t)) ~> sink1"
 		}
 	}
 }
