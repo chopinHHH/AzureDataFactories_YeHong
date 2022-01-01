@@ -2,7 +2,7 @@
 	"name": "OLTP_StockItems",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SinkDatabase",
+			"referenceName": "WWI_Database_OLTP",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
