@@ -13,7 +13,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "Integration_Cities",
+						"referenceName": "Integration_DIM_Cities",
 						"type": "DatasetReference"
 					},
 					"name": "SinkCities"
@@ -22,14 +22,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "Integration_Cities",
+						"referenceName": "Integration_DIM_Cities",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
 				},
 				{
 					"dataset": {
-						"referenceName": "Integration_Cities",
+						"referenceName": "Integration_DIM_Cities",
 						"type": "DatasetReference"
 					},
 					"name": "sink2"

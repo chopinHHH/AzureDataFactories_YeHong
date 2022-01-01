@@ -13,7 +13,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "Integration_StockItems",
+						"referenceName": "Integration_DIM_StockItems",
 						"type": "DatasetReference"
 					},
 					"name": "SinkStockItems"
@@ -22,14 +22,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "Integration_StockItems",
+						"referenceName": "Integration_DIM_StockItems",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
 				},
 				{
 					"dataset": {
-						"referenceName": "Integration_StockItems",
+						"referenceName": "Integration_DIM_StockItems",
 						"type": "DatasetReference"
 					},
 					"name": "sink2"

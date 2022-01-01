@@ -1,5 +1,5 @@
 {
-	"name": "Integration_Cities",
+	"name": "Integration_DIM_Cities",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "IntegrationSink",
