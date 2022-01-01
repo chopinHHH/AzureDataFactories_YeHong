@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SCD_StockItems",
+				"name": "SCD_Cities",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_StockItems",
+						"referenceName": "SCD_Cities",
 						"type": "DataFlowReference"
 					},
 					"compute": {
