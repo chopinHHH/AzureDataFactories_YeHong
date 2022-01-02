@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SCD_Cities",
+				"name": "SCD_Customers",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_Cities",
+						"referenceName": "SCD_Customers",
 						"type": "DataFlowReference"
 					},
 					"compute": {

@@ -1,5 +1,5 @@
 {
-	"name": "Sink_Orders",
+	"name": "SCD_FACT_Orders",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
