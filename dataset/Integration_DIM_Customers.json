@@ -31,14 +31,6 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "PhoneNumber",
-				"type": "nvarchar"
-			},
-			{
-				"name": "FaxNumber",
-				"type": "nvarchar"
-			},
-			{
 				"name": "DeliveryPostalCode",
 				"type": "nvarchar"
 			},
