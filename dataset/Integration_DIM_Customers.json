@@ -31,8 +31,9 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "DeliveryPostalCode",
-				"type": "nvarchar"
+				"name": "PostalCityID",
+				"type": "int",
+				"precision": 10
 			},
 			{
 				"name": "ValidFrom",
