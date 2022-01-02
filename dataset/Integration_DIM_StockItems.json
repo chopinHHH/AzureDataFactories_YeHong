@@ -9,11 +9,6 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "StockItemKey",
-				"type": "int",
-				"precision": 10
-			},
-			{
 				"name": "StockItemID",
 				"type": "int",
 				"precision": 10
