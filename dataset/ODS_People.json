@@ -9,11 +9,6 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "ID",
-				"type": "int",
-				"precision": 10
-			},
-			{
 				"name": "PersonID",
 				"type": "int",
 				"precision": 10
