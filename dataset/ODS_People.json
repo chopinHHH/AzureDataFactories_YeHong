@@ -2,7 +2,7 @@
 	"name": "ODS_People",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SinkDatabase",
+			"referenceName": "ODS_Database",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

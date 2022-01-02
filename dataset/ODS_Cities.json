@@ -2,7 +2,7 @@
 	"name": "ODS_Cities",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SinkDatabase",
+			"referenceName": "ODS_Database",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
