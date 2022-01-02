@@ -2,7 +2,7 @@
 	"name": "Integration_Fact_Orders",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "IntegrationSink",
+			"referenceName": "Integration_Database",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

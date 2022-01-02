@@ -2,7 +2,7 @@
 	"name": "Integration_DIM_StockItems",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "IntegrationSink",
+			"referenceName": "Integration_Database",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
