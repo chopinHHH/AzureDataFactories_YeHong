@@ -1,5 +1,5 @@
 {
-	"name": "SCD_Customers",
+	"name": "SCD_DIM_Customers",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

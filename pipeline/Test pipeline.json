@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_Customers",
+						"referenceName": "SCD_DIM_Customers",
 						"type": "DataFlowReference"
 					},
 					"compute": {
@@ -40,7 +40,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_StockItems",
+						"referenceName": "SCD_DIM_StockItems",
 						"type": "DataFlowReference"
 					},
 					"compute": {
@@ -64,7 +64,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_Cities",
+						"referenceName": "SCD_DIM_Cities",
 						"type": "DataFlowReference"
 					},
 					"compute": {

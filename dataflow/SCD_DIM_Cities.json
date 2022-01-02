@@ -1,5 +1,5 @@
 {
-	"name": "SCD_Cities",
+	"name": "SCD_DIM_Cities",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

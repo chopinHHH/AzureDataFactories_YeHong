@@ -1,5 +1,5 @@
 {
-	"name": "SCD_StockItems",
+	"name": "SCD_DIM_StockItems",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
