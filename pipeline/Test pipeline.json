@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SCD_DIM_Customers",
+				"name": "FACT_Orders",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "SCD_DIM_Customers",
+						"referenceName": "FACT_Orders",
 						"type": "DataFlowReference"
 					},
 					"compute": {

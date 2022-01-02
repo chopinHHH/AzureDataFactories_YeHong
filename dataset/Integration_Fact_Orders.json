@@ -52,11 +52,6 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "PackageTypeID",
-				"type": "int",
-				"precision": 10
-			},
-			{
 				"name": "Quantity",
 				"type": "int",
 				"precision": 10
@@ -90,11 +85,6 @@
 				"type": "decimal",
 				"precision": 18,
 				"scale": 3
-			},
-			{
-				"name": "CurrentFlag",
-				"type": "int",
-				"precision": 10
 			}
 		],
 		"typeProperties": {
